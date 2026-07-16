@@ -2,6 +2,8 @@
 
 『風来のシレン6 とぐろ島探検録』の未識別アイテムを、ダンジョン・カテゴリ・店で確認した価格から絞り込むローカルWebツールです。
 
+公開版: [シレン6 識別補助ツール](https://shiren6-identification-ytanaka.vercel.app/apps/shiren6-identification/)
+
 ## 機能
 
 - ダンジョン、カテゴリ、買値・売値、通常・祝福・呪いで候補を絞り込み
