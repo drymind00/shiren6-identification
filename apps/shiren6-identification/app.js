@@ -1,6 +1,6 @@
 const CSV_URL = '../../outputs/shiren6_notion_import/シレン6 アイテム図鑑・値段識別_インポート用.csv';
 const baseColumns = ['アイテム名', '識別済', 'カテゴリ', '買値', '売値', '容量・回数', '識別方法', 'メモ'];
-const secondaryCategories = ['お香', '武器', '盾', '矢・石', '食料'];
+const secondaryCategories = ['武器', '盾', '矢・石', '食料'];
 const equipmentCategories = new Set(['武器', '盾']);
 const minEnhancement = -1;
 const maxEnhancement = 3;
