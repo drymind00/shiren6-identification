@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>シレン6 識別補助</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <p class="eyebrow">風来のシレン6</p>
+        <h1>識別補助ツール</h1>
+        <p class="lead">ダンジョンとカテゴリで候補を絞り込み、確認済みの候補にはチェックを付けて下に回します。</p>
+      </header>
+
+      <section class="controls" aria-label="絞り込み条件">
+        <label>
+          ダンジョン
+          <select id="dungeon-select"></select>
+        </label>
+        <fieldset>
+          <legend>カテゴリ</legend>
+          <div id="category-options" class="chip-list"></div>
+        </fieldset>
+        <fieldset class="price-filter">
+          <legend>店で確認した価格</legend>
+          <div class="price-inputs">
+            <input id="price-search" type="number" min="0" inputmode="numeric" placeholder="例：1600" aria-label="価格" />
+            <select id="price-type" aria-label="価格の種類">
+              <option value="buy">買値</option>
+              <option value="sell">売値</option>
+            </select>
+          </div>
+          <div class="condition-options" role="radiogroup" aria-label="道具の状態">
+            <label><input type="radio" name="condition" value="normal" checked />通常</label>
+            <label><input type="radio" name="condition" value="blessed" />祝福</label>
+            <label><input type="radio" name="condition" value="cursed" />呪い</label>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="status-row" aria-live="polite">
+        <p id="result-count">読み込み中…</p>
+        <div class="actions">
+          <button id="clear-current" class="secondary" type="button">選択中を解除</button>
+        </div>
+      </section>
+
+      <section id="notice" class="notice" hidden></section>
+      <section id="item-list" class="item-list" aria-label="候補アイテム"></section>
+    </main>
+    <template id="item-template">
+      <article class="item-card">
+        <label class="item-heading">
+          <input class="item-check" type="checkbox" />
+          <span class="item-name"></span>
+        </label>
+        <dl>
+          <div><dt class="buy-label">買値</dt><dd class="buy-price"></dd></div>
+          <div><dt class="sell-label">売値</dt><dd class="sell-price"></dd></div>
+          <div><dt>容量・回数</dt><dd class="capacity"></dd></div>
+        </dl>
+        <p class="price-match" hidden></p>
+        <p class="memo"></p>
+      </article>
+    </template>
+    <script src="./app.js"></script>
+  </body>
+</html>
