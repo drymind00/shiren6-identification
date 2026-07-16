@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/apps/shiren6-identification/",
+      "permanent": false
+    }
+  ]
+}
